@@ -7,7 +7,9 @@ class User < ApplicationRecord
   validates :name, uniqueness: true,  presence: true, length: { in: 2.. 20}
   validates :introduction, length: { maximum: 50}
   
-  has_many :books, dependent: :destroy
+  has_many :books
+    has_many :book_comments, dependent: :destroy
+    has_many :favorites
   attachment :profile_image
 
 end
