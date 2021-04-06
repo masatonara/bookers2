@@ -32,6 +32,8 @@ before_action :ensure_correct_user, only: [:edit, :update]
     end
   end
   
+  
+  
   private
   
   def user_params
